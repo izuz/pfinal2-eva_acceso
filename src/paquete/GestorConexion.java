@@ -35,32 +35,6 @@ public class GestorConexion {
         }
     }
 
-    public void annadirColumna(String caratula) {
-        try {
-            conn1.setAutoCommit(false);
-
-            Statement sta = conn1.createStatement();
-
-            sta.executeUpdate("ALTER TABLE album ADD " + caratula + " VARCHAR(30)");
-
-            sta.close();
-
-            conn1.commit();
-
-            System.out.println("has añadido una columna");
-        } catch (Exception e) {
-            System.out.println("Error");
-            try {
-                if (conn1 != null) {
-                    conn1.rollback();
-                }
-            } catch (Exception se2) {
-                se2.printStackTrace();
-            }
-            e.printStackTrace();
-        }
-    }
-
     public void cerrar_conexion() {
         try {
             conn1.close();
@@ -106,9 +80,9 @@ public class GestorConexion {
             conn1.setAutoCommit(false);
 
             Statement sta = conn1.createStatement();
-            
+
             sta.executeUpdate("DELETE FROM jugadores WHERE id_jugador like " + coger_id);
-            
+
             sta.close();
 
             conn1.commit();

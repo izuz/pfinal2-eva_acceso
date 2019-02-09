@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Gonzalo Izuzquiza
  */
 public class interfaz extends javax.swing.JFrame {
-    
+
     DefaultTableModel tabla_mostrar;
     String errores = "";
 
@@ -55,7 +55,6 @@ public class interfaz extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -269,7 +268,7 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_equipos_consultarActionPerformed
 
     private void ligas_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ligas_consultarActionPerformed
-       try {
+        try {
             gc.conn1.setAutoCommit(false);
 
             String query = "SELECT * FROM liga ";
@@ -316,9 +315,10 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jugadores_eliminarActionPerformed
 
     private void coger_idMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_idMouseClicked
-       coger_id.setText("");
+        coger_id.setText("");
     }//GEN-LAST:event_coger_idMouseClicked
     GestorConexion gc = new GestorConexion();
+
     /**
      * @param args the command line arguments
      */
