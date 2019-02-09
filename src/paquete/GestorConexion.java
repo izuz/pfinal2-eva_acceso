@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 /**
  * @author Gonzalo Izuzquiza
@@ -15,8 +14,7 @@ public class GestorConexion {
 
     Connection conn1;
     String cadena_resultado = "";
-    static Statement sentencia;
-    static ResultSet resultado;
+    
 
     public GestorConexion() {
 
@@ -106,25 +104,4 @@ public class GestorConexion {
         }
     }
 
-    public static ArrayList<String> llenarLigas() {
-
-        ArrayList<String> lista = new ArrayList<String>();
-
-        String consulta = "SELECT nombre_liga FROM equipo";
-
-        try {
-            resultado = sentencia.executeQuery(consulta);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            while (resultado.next()) {
-                lista.add(resultado.getString("nombre_liga"));
-            }
-        } catch (Exception e) {
-        }
-
-        return lista;
-    }
 }

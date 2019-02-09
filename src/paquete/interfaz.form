@@ -23,39 +23,35 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="error" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" pref="997" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Component id="titulo" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jugadores_consultar" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="id_texto" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="coger_id" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jugadores_consultar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="equipos_consultar" max="32767" attributes="0"/>
-                          <Component id="jugadores_eliminar" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="equipos_consultar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ligas_consultar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="id_texto" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="coger_id" min="-2" pref="36" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jugadores_eliminar" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="nombreEquipo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="coger_nombreEquipo" alignment="0" pref="104" max="32767" attributes="0"/>
+                          <Component id="coger_nombreEquipo" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -64,16 +60,13 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="nombreEstadio" min="-2" pref="104" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="nombrePresidente" min="-2" pref="104" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="coger_nombreEstadio" min="-2" pref="104" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="coger_nombrePresidente" min="-2" pref="104" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="nombreEstadio" alignment="1" min="-2" pref="104" max="-2" attributes="0"/>
+                          <Component id="coger_nombreEstadio" alignment="1" min="-2" pref="104" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="nombrePresidente" min="-2" pref="104" max="-2" attributes="0"/>
+                          <Component id="coger_nombrePresidente" min="-2" pref="104" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -92,11 +85,11 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="nombreLiga" pref="104" max="32767" attributes="0"/>
-                          <Component id="cogerLiga" max="32767" attributes="0"/>
+                          <Component id="nombreLiga" max="32767" attributes="0"/>
+                          <Component id="cogerLiga" min="-2" pref="104" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="insertar_equipoBoton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="insertar_equipoBoton" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -112,60 +105,59 @@
                   <Component id="jugadores_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="equipos_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ligas_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="id_texto" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="coger_id" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jugadores_eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="nombreLiga" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="nombreEquipo" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                                          <Component id="nombreCiudad" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="coger_nombreEquipo" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="coger_nombreCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="coger_nombreEstadio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="nombreEstadio" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="nombrePresidente" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="fundado" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="coger_anno" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="coger_nombrePresidente" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
+                      <Component id="coger_nombreEstadio" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="nombreEstadio" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="coger_anno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="coger_nombrePresidente" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="en_contra" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="a_favor" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="en_contra" min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Component id="a_favor" min="-2" pref="22" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="coger_aFavor" max="32767" attributes="0"/>
+                                  <Component id="coger_enContra" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="coger_aFavor" max="32767" attributes="0"/>
+                          <Component id="nombrePresidente" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="fundado" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="coger_enContra" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="cogerLiga" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cogerLiga" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="insertar_equipoBoton" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="nombreLiga" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="insertar_equipoBoton" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="nombreEquipo" pref="22" max="32767" attributes="0"/>
+                          <Component id="nombreCiudad" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="coger_nombreEquipo" min="-2" max="-2" attributes="0"/>
+                          <Component id="coger_nombreCiudad" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <EmptySpace pref="127" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="242" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="error" min="-2" pref="27" max="-2" attributes="0"/>
@@ -395,12 +387,7 @@
     <Component class="javax.swing.JComboBox" name="cogerLiga">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+          <StringArray count="0"/>
         </Property>
       </Properties>
       <Events>
