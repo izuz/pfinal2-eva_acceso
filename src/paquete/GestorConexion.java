@@ -103,5 +103,7 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
-
+    public void insertarEquipo(){
+        
+    }
 }

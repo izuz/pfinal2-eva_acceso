@@ -10,10 +10,9 @@ import javax.swing.table.DefaultTableModel;
  * @author Gonzalo Izuzquiza
  */
 public class interfaz extends javax.swing.JFrame {
-
+    
     DefaultTableModel tabla_mostrar;
     String errores = "";
-    
 
     /**
      * Creates new form interfaz
@@ -25,30 +24,29 @@ public class interfaz extends javax.swing.JFrame {
         //this.setSize(730, 500);
         llenarLiga();
         
-        
         try {
             gc.conn1.setAutoCommit(false);
-
+            
             Statement sta = gc.conn1.createStatement();
-
+            
             String query = "SELECT * FROM liga ";
-
+            
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-
+            
             int numColumnas = metaDatos.getColumnCount();
-
+            
             DefaultTableModel modelo = new DefaultTableModel();
-
+            
             this.datos.setModel(modelo);
-
+            
             for (int i = 1; i <= numColumnas; i++) {
                 modelo.addColumn(metaDatos.getColumnLabel(i));
             }
-
+            
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-
+                
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
@@ -58,7 +56,7 @@ public class interfaz extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -156,6 +154,11 @@ public class interfaz extends javax.swing.JFrame {
 
         coger_nombreEquipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_nombreEquipo.setText("Nombe Equipo");
+        coger_nombreEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_nombreEquipoMouseClicked(evt);
+            }
+        });
 
         nombreEquipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         nombreEquipo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -167,6 +170,11 @@ public class interfaz extends javax.swing.JFrame {
 
         coger_nombreCiudad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_nombreCiudad.setText("Ciudad");
+        coger_nombreCiudad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_nombreCiudadMouseClicked(evt);
+            }
+        });
 
         nombreEstadio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         nombreEstadio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -182,6 +190,11 @@ public class interfaz extends javax.swing.JFrame {
 
         coger_anno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_anno.setText("Año");
+        coger_anno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_annoMouseClicked(evt);
+            }
+        });
 
         a_favor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         a_favor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -189,6 +202,11 @@ public class interfaz extends javax.swing.JFrame {
 
         coger_aFavor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_aFavor.setText("a favor");
+        coger_aFavor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_aFavorMouseClicked(evt);
+            }
+        });
 
         en_contra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         en_contra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -196,6 +214,11 @@ public class interfaz extends javax.swing.JFrame {
 
         coger_enContra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_enContra.setText("en contra");
+        coger_enContra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_enContraMouseClicked(evt);
+            }
+        });
 
         nombreLiga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         nombreLiga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -211,13 +234,17 @@ public class interfaz extends javax.swing.JFrame {
 
         coger_nombrePresidente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_nombrePresidente.setText("Presidente");
+        coger_nombrePresidente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_nombrePresidenteMouseClicked(evt);
+            }
+        });
 
         coger_nombreEstadio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_nombreEstadio.setText("Estadio");
-
-        cogerLiga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cogerLigaActionPerformed(evt);
+        coger_nombreEstadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_nombreEstadioMouseClicked(evt);
             }
         });
 
@@ -343,37 +370,37 @@ public class interfaz extends javax.swing.JFrame {
     private void jugadores_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugadores_consultarActionPerformed
         try {
             gc.conn1.setAutoCommit(false);
-
+            
             String query = "SELECT * FROM jugadores ";
-
+            
             Statement sta = gc.conn1.createStatement();
-
+            
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-
+            
             int numColumnas = metaDatos.getColumnCount();
-
+            
             tabla_mostrar = new DefaultTableModel();
-
+            
             this.datos.setModel(tabla_mostrar);
-
+            
             for (int i = 1; i <= numColumnas; i++) {
                 tabla_mostrar.addColumn(metaDatos.getColumnLabel(i));
             }
-
+            
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-
+                
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
                 tabla_mostrar.addRow(fila);
             }
-
+            
             rs.close();
-
+            
             sta.close();
-
+            
         } catch (Exception e) {
             e.printStackTrace();
             errores = e.toString();
@@ -384,37 +411,37 @@ public class interfaz extends javax.swing.JFrame {
     private void equipos_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipos_consultarActionPerformed
         try {
             gc.conn1.setAutoCommit(false);
-
+            
             String query = "SELECT * FROM equipo ";
-
+            
             Statement sta = gc.conn1.createStatement();
-
+            
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-
+            
             int numColumnas = metaDatos.getColumnCount();
-
+            
             tabla_mostrar = new DefaultTableModel();
-
+            
             this.datos.setModel(tabla_mostrar);
-
+            
             for (int i = 1; i <= numColumnas; i++) {
                 tabla_mostrar.addColumn(metaDatos.getColumnLabel(i));
             }
-
+            
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-
+                
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
                 tabla_mostrar.addRow(fila);
             }
-
+            
             rs.close();
-
+            
             sta.close();
-
+            
         } catch (Exception e) {
             e.printStackTrace();
             errores = e.toString();
@@ -425,37 +452,37 @@ public class interfaz extends javax.swing.JFrame {
     private void ligas_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ligas_consultarActionPerformed
         try {
             gc.conn1.setAutoCommit(false);
-
+            
             String query = "SELECT * FROM liga ";
-
+            
             Statement sta = gc.conn1.createStatement();
-
+            
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-
+            
             int numColumnas = metaDatos.getColumnCount();
-
+            
             tabla_mostrar = new DefaultTableModel();
-
+            
             this.datos.setModel(tabla_mostrar);
-
+            
             for (int i = 1; i <= numColumnas; i++) {
                 tabla_mostrar.addColumn(metaDatos.getColumnLabel(i));
             }
-
+            
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-
+                
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
                 tabla_mostrar.addRow(fila);
             }
-
+            
             rs.close();
-
+            
             sta.close();
-
+            
         } catch (Exception e) {
             e.printStackTrace();
             errores = e.toString();
@@ -474,28 +501,54 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_coger_idMouseClicked
 
     private void insertar_equipoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_equipoBotonActionPerformed
-
+        gc.insertarEquipo();
+        equipos_consultarActionPerformed(evt);
+        error.setText(gc.cadena_resultado);
     }//GEN-LAST:event_insertar_equipoBotonActionPerformed
 
-    private void cogerLigaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cogerLigaActionPerformed
+    private void coger_nombreEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_nombreEquipoMouseClicked
+        coger_nombreEquipo.setText("");
+    }//GEN-LAST:event_coger_nombreEquipoMouseClicked
 
-    }//GEN-LAST:event_cogerLigaActionPerformed
+    private void coger_nombreCiudadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_nombreCiudadMouseClicked
+        coger_nombreCiudad.setText("");
+    }//GEN-LAST:event_coger_nombreCiudadMouseClicked
+
+    private void coger_nombreEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_nombreEstadioMouseClicked
+        coger_nombreEstadio.setText("");
+    }//GEN-LAST:event_coger_nombreEstadioMouseClicked
+
+    private void coger_nombrePresidenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_nombrePresidenteMouseClicked
+        coger_nombrePresidente.setText("");
+    }//GEN-LAST:event_coger_nombrePresidenteMouseClicked
+
+    private void coger_annoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_annoMouseClicked
+        coger_anno.setText("");
+    }//GEN-LAST:event_coger_annoMouseClicked
+
+    private void coger_aFavorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_aFavorMouseClicked
+        coger_aFavor.setText("");
+    }//GEN-LAST:event_coger_aFavorMouseClicked
+
+    private void coger_enContraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_enContraMouseClicked
+        coger_enContra.setText("");
+    }//GEN-LAST:event_coger_enContraMouseClicked
     GestorConexion gc = new GestorConexion();
     
-    public void llenarLiga(){
-       try {
-          
+    public void llenarLiga() {
+        try {
+            
             Statement sta = gc.conn1.createStatement();
             ResultSet rs = sta.executeQuery("SELECT nombre_liga FROM equipo ORDER BY nombre_liga ASC ");
             cogerLiga.removeAllItems();
-            while(rs.next()){
+            while (rs.next()) {
                 cogerLiga.addItem(rs.getString(1));
             }
-
+            
         } catch (Exception e) {
             System.out.println("Error");
         }
-   } 
+    }
 
     /**
      * @param args the command line arguments

@@ -264,6 +264,9 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Nombe Equipo"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_nombreEquipoMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="nombreEquipo">
       <Properties>
@@ -288,6 +291,9 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Ciudad"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_nombreCiudadMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="nombreEstadio">
       <Properties>
@@ -321,6 +327,9 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_annoMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="a_favor">
       <Properties>
@@ -336,6 +345,9 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="a favor"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_aFavorMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="en_contra">
       <Properties>
@@ -351,6 +363,9 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="en contra"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_enContraMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="nombreLiga">
       <Properties>
@@ -377,12 +392,18 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Presidente"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_nombrePresidenteMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="coger_nombreEstadio">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Estadio"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_nombreEstadioMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="cogerLiga">
       <Properties>
@@ -390,9 +411,6 @@
           <StringArray count="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cogerLigaActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
