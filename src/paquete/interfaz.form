@@ -157,7 +157,7 @@
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="coger_idActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coger_idMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jugadores_eliminar">

@@ -79,7 +79,7 @@ public class GestorConexion {
             conn1.setAutoCommit(false);
 
             Statement sta = conn1.createStatement();
-            String query = "SELECT * FROM album ";
+            String query = "SELECT * FROM jugadores ";
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
 
@@ -101,45 +101,14 @@ public class GestorConexion {
         }
     }
 
-    public void insertarAlbumNuevo(String id_Album, String titulo_Album, String publicacion, String artistaa) {
+    public void eliminarJugador(String coger_id) {
         try {
             conn1.setAutoCommit(false);
 
             Statement sta = conn1.createStatement();
-
-            sta.executeUpdate("INSERT INTO album VALUES('" + id_Album + "', '" + titulo_Album + "', '" + publicacion + "', '" + artistaa + "')");
-
-            System.out.println("insertado album correctamente");
-
-            sta.close();
-
-            conn1.commit();
-        } catch (Exception e) {
-            System.out.println("Error");
-
-            try {
-                if (conn1 != null) {
-                    conn1.rollback();
-                }
-            } catch (Exception se2) {
-                se2.printStackTrace();
-                cadena_resultado = se2.toString();
-            }
-            e.printStackTrace();
-            cadena_resultado = e.toString();
-        }
-    }
-
-    public void cancionNueva(String id, String nombre, String duracion, String letra, String id_album) {
-        try {
-            conn1.setAutoCommit(false);
-
-            Statement sta = conn1.createStatement();
-
-            sta.executeUpdate("INSERT INTO cancion VALUES('" + id + "', '" + nombre + "', '" + duracion + "', '" + letra + "', '" + id_album + "')");
-
-            System.out.println("insertado cancion correctamente");
-
+            
+            sta.executeUpdate("DELETE FROM jugadores WHERE id_jugador like " + coger_id);
+            
             sta.close();
 
             conn1.commit();

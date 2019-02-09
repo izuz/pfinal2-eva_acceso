@@ -121,9 +121,9 @@ public class interfaz extends javax.swing.JFrame {
 
         coger_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coger_id.setText("1");
-        coger_id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                coger_idActionPerformed(evt);
+        coger_id.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coger_idMouseClicked(evt);
             }
         });
 
@@ -310,29 +310,14 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_ligas_consultarActionPerformed
 
     private void jugadores_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugadores_eliminarActionPerformed
-        try {
-            gc.conn1.setAutoCommit(false);
-
-            Statement sta = gc.conn1.createStatement();
-
-            sta.executeUpdate("DELETE FROM jugadores WHERE id_jugador like " + coger_id.getText());
-            
-            tabla_mostrar = new DefaultTableModel();
-
-            this.datos.setModel(tabla_mostrar);
-
-            sta.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            errores = e.toString();
-            error.setText(errores);
-        }
+        gc.eliminarJugador(coger_id.getText());
+        jugadores_consultarActionPerformed(evt);
+        error.setText(gc.cadena_resultado);
     }//GEN-LAST:event_jugadores_eliminarActionPerformed
 
-    private void coger_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coger_idActionPerformed
-        coger_id.setText("");
-    }//GEN-LAST:event_coger_idActionPerformed
+    private void coger_idMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_idMouseClicked
+       coger_id.setText("");
+    }//GEN-LAST:event_coger_idMouseClicked
     GestorConexion gc = new GestorConexion();
     /**
      * @param args the command line arguments
