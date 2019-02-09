@@ -501,7 +501,9 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_coger_idMouseClicked
 
     private void insertar_equipoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_equipoBotonActionPerformed
-        gc.insertarEquipo();
+        gc.insertarEquipo(coger_nombreEquipo.getText(), coger_nombreCiudad.getText(),
+                coger_nombreEstadio.getText(),coger_nombrePresidente.getText(),coger_anno.getText(),
+                coger_aFavor.getText(),coger_enContra.getText(), (String) cogerLiga.getSelectedItem());
         equipos_consultarActionPerformed(evt);
         error.setText(gc.cadena_resultado);
     }//GEN-LAST:event_insertar_equipoBotonActionPerformed
