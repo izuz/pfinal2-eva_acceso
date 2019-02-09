@@ -675,16 +675,16 @@ public class interfaz extends javax.swing.JFrame {
         coger_nacionalidad.setText("");
     }//GEN-LAST:event_coger_nacionalidadMouseClicked
 
+    private void coger_idJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_idJugadorMouseClicked
+        coger_idJugador.setText("");
+    }//GEN-LAST:event_coger_idJugadorMouseClicked
+
     private void insertar_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_jugadorActionPerformed
        gc.insertarJugador(coger_idJugador.getText(),coger_nombreJugador.getText(), coger_posicion.getText(), coger_nacionalidad.getText(), (String) cogerEquipo.getSelectedItem());
        jugadores_consultarActionPerformed(evt);
        error.setText(gc.cadena_resultado);
        JOptionPane.showMessageDialog(null, "Jugador insertado correctamente");
     }//GEN-LAST:event_insertar_jugadorActionPerformed
-
-    private void coger_idJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_idJugadorMouseClicked
-        coger_idJugador.setText("");
-    }//GEN-LAST:event_coger_idJugadorMouseClicked
     
     GestorConexion gc = new GestorConexion();
     
