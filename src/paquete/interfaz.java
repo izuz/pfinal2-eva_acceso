@@ -313,33 +313,13 @@ public class interfaz extends javax.swing.JFrame {
         try {
             gc.conn1.setAutoCommit(false);
 
-            //String query = "DELETE FROM jugadores WHERE id_jugador like" + coger_id.getText();
-
             Statement sta = gc.conn1.createStatement();
 
-            ResultSet rs = sta.executeUpdate("DELETE FROM jugadores WHERE id_jugar like" + coger_id.getText());
-            ResultSetMetaData metaDatos = rs.getMetaData();
-
-            int numColumnas = metaDatos.getColumnCount();
-
+            sta.executeUpdate("DELETE FROM jugadores WHERE id_jugador like " + coger_id.getText());
+            
             tabla_mostrar = new DefaultTableModel();
 
             this.datos.setModel(tabla_mostrar);
-
-            for (int i = 1; i <= numColumnas; i++) {
-                tabla_mostrar.addColumn(metaDatos.getColumnLabel(i));
-            }
-
-            while (rs.next()) {
-                Object[] fila = new Object[numColumnas];
-
-                for (int i = 0; i < numColumnas; i++) {
-                    fila[i] = rs.getObject(i + 1);
-                }
-                tabla_mostrar.addRow(fila);
-            }
-
-            rs.close();
 
             sta.close();
 
