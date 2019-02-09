@@ -133,6 +133,34 @@ public class GestorConexion {
             e.printStackTrace();
             cadena_resultado = e.toString();
         }
-        
+    }
+    public void insertarJugador(String id, String nombre, String posicion, String nacionalidad, String nombreEquipo){
+        try {
+            conn1.setAutoCommit(false);
+
+            Statement sta = conn1.createStatement();
+
+            sta.executeUpdate("INSERT INTO equipo VALUES('" + id + "', '" + nombre + "', '" + posicion + "',"
+                    + " '" + nacionalidad + "', '" + nombreEquipo + "')");
+
+            System.out.println("insertado album correctamente");
+
+            sta.close();
+
+            conn1.commit();
+        } catch (Exception e) {
+            System.out.println("Error");
+
+            try {
+                if (conn1 != null) {
+                    conn1.rollback();
+                }
+            } catch (Exception se2) {
+                se2.printStackTrace();
+                cadena_resultado = se2.toString();
+            }
+            e.printStackTrace();
+            cadena_resultado = e.toString();
+        }
     }
 }
