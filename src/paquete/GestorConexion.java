@@ -114,7 +114,7 @@ public class GestorConexion {
             sta.executeUpdate("INSERT INTO equipo VALUES('" + nombre + "', '" + ciudad + "', '" + estadio + "',"
                     + " '" + presidente + "', '" + anno + "', '" + aFavor + "', '" + enContra + "', '" + liga + "')");
 
-            System.out.println("insertado album correctamente");
+            System.out.println("insertado equipo correctamente");
 
             sta.close();
 
@@ -134,16 +134,45 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
-    public void insertarJugador(String id, String nombre, String posicion, String nacionalidad, String nombreEquipo){
+    public void insertarJugador(String nombre, String posicion, String nacionalidad, String nombreEquipo){
         try {
             conn1.setAutoCommit(false);
 
             Statement sta = conn1.createStatement();
 
-            sta.executeUpdate("INSERT INTO equipo VALUES('" + id + "', '" + nombre + "', '" + posicion + "',"
+            sta.executeUpdate("INSERT INTO jugadores VALUES(NULL, '" + nombre + "', '" + posicion + "',"
                     + " '" + nacionalidad + "', '" + nombreEquipo + "')");
 
-            System.out.println("insertado album correctamente");
+            System.out.println("insertado jugador correctamente");
+
+            sta.close();
+
+            conn1.commit();
+        } catch (Exception e) {
+            System.out.println("Error");
+
+            try {
+                if (conn1 != null) {
+                    conn1.rollback();
+                }
+            } catch (Exception se2) {
+                se2.printStackTrace();
+                cadena_resultado = se2.toString();
+            }
+            e.printStackTrace();
+            cadena_resultado = e.toString();
+        }
+    }
+    
+    public void insertarliga(String nombre, String pais, String numero_equipos, String numero_partidos){
+        try {
+            conn1.setAutoCommit(false);
+
+            Statement sta = conn1.createStatement();
+
+            sta.executeUpdate("INSERT INTO liga VALUES('" + nombre + "', '" + pais + "', '" + numero_equipos + "','" + numero_partidos + "')");
+
+            System.out.println("insertada liga correctamente");
 
             sta.close();
 
