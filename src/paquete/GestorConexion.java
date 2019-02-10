@@ -103,8 +103,8 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
-    public void insertarEquipo(String nombre, String ciudad, String estadio, String presidente, String anno, 
-                               String aFavor, String enContra, String liga){
+    
+    public void insertarEquipo(String nombre, String ciudad, String estadio, String presidente, String anno, String aFavor, String enContra, String liga){
         
         try {
             conn1.setAutoCommit(false);
@@ -134,6 +134,7 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
+    
     public void insertarJugador(String nombre, String posicion, String nacionalidad, String nombreEquipo){
         try {
             conn1.setAutoCommit(false);
@@ -163,7 +164,7 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
-    
+
     public void insertarliga(String nombre, String pais, String numero_equipos, String numero_partidos){
         try {
             conn1.setAutoCommit(false);
