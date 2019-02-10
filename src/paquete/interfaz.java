@@ -343,7 +343,7 @@ public class interfaz extends javax.swing.JFrame {
         pais_texto.setText("Pais");
 
         coger_equipos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        coger_equipos.setText("Numero Equipos");
+        coger_equipos.setText("Nº Equipos");
         coger_equipos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 coger_equiposMouseClicked(evt);
@@ -355,7 +355,7 @@ public class interfaz extends javax.swing.JFrame {
         equipos_texto.setText("Número Equipos");
 
         coger_partidos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        coger_partidos.setText("Numero Partidos");
+        coger_partidos.setText("Nº Partidos");
         coger_partidos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 coger_partidosMouseClicked(evt);
@@ -374,9 +374,9 @@ public class interfaz extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/paquete/ligas.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ligas.jpg"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/paquete/balon.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/balon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
