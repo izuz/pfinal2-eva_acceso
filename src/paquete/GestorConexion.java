@@ -23,7 +23,7 @@ public class GestorConexion {
         try {
             String url1 = "jdbc:mysql://localhost:3306/futbol?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             String user = "root";
-            String password = "";
+            String password = "root";
             conn1 = DriverManager.getConnection(url1, user, password);
 
             if (conn1 != null) {
