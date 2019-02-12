@@ -106,7 +106,7 @@ public class interfaz extends javax.swing.JFrame {
         equipos_texto = new javax.swing.JLabel();
         coger_partidos = new javax.swing.JTextField();
         partidos_texto = new javax.swing.JLabel();
-        insertar_jugador1 = new javax.swing.JButton();
+        insertar_liga = new javax.swing.JButton();
         pelota = new javax.swing.JLabel();
         ligas = new javax.swing.JLabel();
 
@@ -365,11 +365,11 @@ public class interfaz extends javax.swing.JFrame {
         partidos_texto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         partidos_texto.setText("Número Partidos");
 
-        insertar_jugador1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        insertar_jugador1.setText("Insertar Liga");
-        insertar_jugador1.addActionListener(new java.awt.event.ActionListener() {
+        insertar_liga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        insertar_liga.setText("Insertar Liga");
+        insertar_liga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                insertar_jugador1ActionPerformed(evt);
+                insertar_ligaActionPerformed(evt);
             }
         });
 
@@ -484,7 +484,7 @@ public class interfaz extends javax.swing.JFrame {
                             .addComponent(partidos_texto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(coger_partidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(insertar_jugador1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(insertar_liga, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -575,7 +575,7 @@ public class interfaz extends javax.swing.JFrame {
                                 .addComponent(partidos_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(insertar_jugador1)
+                                    .addComponent(insertar_liga)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(coger_partidos)
                                         .addGap(1, 1, 1)))))
@@ -801,12 +801,15 @@ public class interfaz extends javax.swing.JFrame {
         coger_partidos.setText("");
     }//GEN-LAST:event_coger_partidosMouseClicked
 
-    private void insertar_jugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_jugador1ActionPerformed
+    private void insertar_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_ligaActionPerformed
        gc.insertarliga(coger_nombreLiga.getText(), coger_pais.getText(), coger_equipos.getText(), coger_partidos.getText());
        ligas_consultarActionPerformed(evt);
        error.setText(gc.cadena_resultado);
+       GestorConexion gc = new GestorConexion();
+       
+       
        JOptionPane.showMessageDialog(null, "Liga insertada correctamente");
-    }//GEN-LAST:event_insertar_jugador1ActionPerformed
+    }//GEN-LAST:event_insertar_ligaActionPerformed
     
     GestorConexion gc = new GestorConexion();
     
@@ -903,7 +906,7 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel id_texto;
     private javax.swing.JButton insertar_equipoBoton;
     private javax.swing.JButton insertar_jugador;
-    private javax.swing.JButton insertar_jugador1;
+    private javax.swing.JButton insertar_liga;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jugadores_consultar;
     private javax.swing.JButton jugadores_eliminar;
