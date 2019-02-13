@@ -805,9 +805,6 @@ public class interfaz extends javax.swing.JFrame {
        gc.insertarliga(coger_nombreLiga.getText(), coger_pais.getText(), coger_equipos.getText(), coger_partidos.getText());
        ligas_consultarActionPerformed(evt);
        error.setText(gc.cadena_resultado);
-       GestorConexion gc = new GestorConexion();
-       
-       
        JOptionPane.showMessageDialog(null, "Liga insertada correctamente");
     }//GEN-LAST:event_insertar_ligaActionPerformed
     
