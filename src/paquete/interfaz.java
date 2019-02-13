@@ -736,6 +736,7 @@ public class interfaz extends javax.swing.JFrame {
         equipos_consultarActionPerformed(evt);
         error.setText(gc.cadena_resultado);
         JOptionPane.showMessageDialog(null, "Equipo insertado correctamente");
+        llenarEquipo();
     }//GEN-LAST:event_insertar_equipoBotonActionPerformed
 
     private void coger_nombreEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_nombreEquipoMouseClicked
@@ -806,6 +807,7 @@ public class interfaz extends javax.swing.JFrame {
        ligas_consultarActionPerformed(evt);
        error.setText(gc.cadena_resultado);
        JOptionPane.showMessageDialog(null, "Liga insertada correctamente");
+       llenarLiga();
     }//GEN-LAST:event_insertar_ligaActionPerformed
     
     GestorConexion gc = new GestorConexion();
@@ -814,7 +816,7 @@ public class interfaz extends javax.swing.JFrame {
         try {
             
             Statement sta = gc.conn1.createStatement();
-            ResultSet rs = sta.executeQuery("SELECT nombre_liga FROM equipo ORDER BY nombre_liga ASC ");
+            ResultSet rs = sta.executeQuery("SELECT nombre FROM liga ORDER BY nombre ASC ");
             cogerLiga.removeAllItems();
             while (rs.next()) {
                 cogerLiga.addItem(rs.getString(1));
@@ -829,7 +831,7 @@ public class interfaz extends javax.swing.JFrame {
         try {
             
             Statement sta = gc.conn1.createStatement();
-            ResultSet rs = sta.executeQuery("SELECT nombre_equipo FROM jugadores ORDER BY nombre_equipo  ASC ");
+            ResultSet rs = sta.executeQuery("SELECT nombre FROM equipo ORDER BY nombre  ASC ");
             cogerEquipo.removeAllItems();
             while (rs.next()) {
                 cogerEquipo.addItem(rs.getString(1));
