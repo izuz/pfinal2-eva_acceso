@@ -20,7 +20,7 @@ public class interfaz extends javax.swing.JFrame {
      */
     public interfaz() {
         initComponents();
-        this.getContentPane().setBackground(Color.green); // damos color al fondo del jFrame
+        this.getContentPane().setBackground(Color.GREEN); // damos color al fondo del jFrame
         this.setLocationRelativeTo(null); // con esto hacemos que la pnatalla se abra en el centro de la pantalla
         llenarLiga();
         llenarEquipo();
