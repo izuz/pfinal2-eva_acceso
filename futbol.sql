@@ -142,13 +142,13 @@ ALTER TABLE `jugadores`
 -- Filtros para la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`nombre_liga`) REFERENCES `liga` (`nombre`) ON DELETE CASCADE;
+  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`nombre_liga`) REFERENCES `liga` (`nombre`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  ADD CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`nombre_equipo`) REFERENCES `equipo` (`nombre`) ON DELETE CASCADE;
+  ADD CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`nombre_equipo`) REFERENCES `equipo` (`nombre`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
