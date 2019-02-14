@@ -28,7 +28,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="error" alignment="1" max="32767" attributes="0"/>
                           <Component id="titulo" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -46,7 +45,9 @@
                       <Component id="coger_id" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jugadores_eliminar" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="error" min="-2" pref="290" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -134,7 +135,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="nombre_LIGA" alignment="0" max="32767" attributes="0"/>
                           <Component id="coger_nombreLiga" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
@@ -158,6 +159,39 @@
                       <Component id="insertar_liga" min="-2" pref="133" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="modifica_nombreLiga" pref="104" max="32767" attributes="0"/>
+                                  <Component id="nombre_LIGA1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="pais_texto1" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="equipos_texto1" min="-2" pref="104" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="modifica_pais" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="modifica_equipos" min="-2" pref="104" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="datos_tabla_insertar" alignment="1" min="-2" pref="263" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="partidos_texto1" max="32767" attributes="0"/>
+                          <Component id="modifica_partidos" pref="104" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="modificar_liga" min="-2" pref="133" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
       </Group>
@@ -168,13 +202,16 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="titulo" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jugadores_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="equipos_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ligas_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="id_texto" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="coger_id" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jugadores_eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jugadores_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="equipos_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ligas_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="id_texto" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="coger_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jugadores_eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="error" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -229,7 +266,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="nombreTeam" pref="16" max="32767" attributes="0"/>
+                              <Component id="nombreTeam" pref="27" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="cogerEquipo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
@@ -263,7 +300,7 @@
                           <Group type="102" attributes="0">
                               <Component id="equipos_texto" min="-2" pref="20" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="coger_equipos" max="32767" attributes="0"/>
+                              <Component id="coger_equipos" pref="33" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="nombre_LIGA" min="-2" pref="20" max="-2" attributes="0"/>
@@ -289,19 +326,40 @@
                       </Group>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="ligas" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="pelota" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ligas" alignment="1" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="pelota" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="242" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="error" min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="datos_tabla_insertar" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="equipos_texto1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="partidos_texto1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="pais_texto1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="nombre_LIGA1" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="modificar_liga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="modifica_partidos" alignment="3" max="32767" attributes="0"/>
+                          <Component id="modifica_equipos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="modifica_pais" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="modifica_nombreLiga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -734,6 +792,84 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/images/balon.jpg"/>
         </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="datos_tabla_insertar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="INSERTAR DATOS DE LA TABLA"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="datos_tabla_insertarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="modifica_nombreLiga">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="modifica_pais">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="modifica_equipos">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="modifica_partidos">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="modificar_liga">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Modificar Liga"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificar_ligaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nombre_LIGA1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Nombre Liga"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pais_texto1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Pais"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="equipos_texto1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero Equipos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="partidos_texto1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero Partidos"/>
       </Properties>
     </Component>
   </SubComponents>

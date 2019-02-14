@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Gonzalo Izuzquiza
  */
 public class interfaz extends javax.swing.JFrame {
-    
+
     DefaultTableModel tabla_mostrar;
     String errores = "";
 
@@ -24,30 +24,30 @@ public class interfaz extends javax.swing.JFrame {
         this.setLocationRelativeTo(null); // con esto hacemos que la pnatalla se abra en el centro de la pantalla
         llenarLiga();
         llenarEquipo();
-        
+
         try {
             gc.conn1.setAutoCommit(false);
-            
+
             Statement sta = gc.conn1.createStatement();
-            
+
             String query = "SELECT * FROM liga ";
-            
+
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-            
+
             int numColumnas = metaDatos.getColumnCount();
-            
+
             DefaultTableModel modelo = new DefaultTableModel();
-            
+
             this.datos.setModel(modelo);
-            
+
             for (int i = 1; i <= numColumnas; i++) {
                 modelo.addColumn(metaDatos.getColumnLabel(i));
             }
-            
+
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-                
+
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
@@ -57,7 +57,7 @@ public class interfaz extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -109,6 +109,16 @@ public class interfaz extends javax.swing.JFrame {
         insertar_liga = new javax.swing.JButton();
         pelota = new javax.swing.JLabel();
         ligas = new javax.swing.JLabel();
+        datos_tabla_insertar = new javax.swing.JButton();
+        modifica_nombreLiga = new javax.swing.JTextField();
+        modifica_pais = new javax.swing.JTextField();
+        modifica_equipos = new javax.swing.JTextField();
+        modifica_partidos = new javax.swing.JTextField();
+        modificar_liga = new javax.swing.JButton();
+        nombre_LIGA1 = new javax.swing.JLabel();
+        pais_texto1 = new javax.swing.JLabel();
+        equipos_texto1 = new javax.swing.JLabel();
+        partidos_texto1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -377,6 +387,46 @@ public class interfaz extends javax.swing.JFrame {
 
         ligas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/balon.jpg"))); // NOI18N
 
+        datos_tabla_insertar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        datos_tabla_insertar.setText("INSERTAR DATOS DE LA TABLA");
+        datos_tabla_insertar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                datos_tabla_insertarActionPerformed(evt);
+            }
+        });
+
+        modifica_nombreLiga.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        modifica_pais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        modifica_equipos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        modifica_partidos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        modificar_liga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        modificar_liga.setText("Modificar Liga");
+        modificar_liga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificar_ligaActionPerformed(evt);
+            }
+        });
+
+        nombre_LIGA1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        nombre_LIGA1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombre_LIGA1.setText("Nombre Liga");
+
+        pais_texto1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pais_texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pais_texto1.setText("Pais");
+
+        equipos_texto1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        equipos_texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        equipos_texto1.setText("Número Equipos");
+
+        partidos_texto1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        partidos_texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        partidos_texto1.setText("Número Partidos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -386,7 +436,6 @@ public class interfaz extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(error, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane1))
                         .addContainerGap())
@@ -402,7 +451,9 @@ public class interfaz extends javax.swing.JFrame {
                         .addComponent(coger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jugadores_eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(254, 254, 254))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -485,7 +536,32 @@ public class interfaz extends javax.swing.JFrame {
                             .addComponent(coger_partidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(insertar_liga, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(modifica_nombreLiga, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                    .addComponent(nombre_LIGA1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(pais_texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(equipos_texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(modifica_pais, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(modifica_equipos, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(datos_tabla_insertar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(partidos_texto1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(modifica_partidos, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(modificar_liga, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(204, 204, 204))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,13 +569,15 @@ public class interfaz extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jugadores_consultar)
-                    .addComponent(equipos_consultar)
-                    .addComponent(ligas_consultar)
-                    .addComponent(id_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(coger_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jugadores_eliminar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jugadores_consultar)
+                        .addComponent(equipos_consultar)
+                        .addComponent(ligas_consultar)
+                        .addComponent(id_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(coger_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jugadores_eliminar))
+                    .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -540,7 +618,7 @@ public class interfaz extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(nombreTeam, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                                .addComponent(nombreTeam, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cogerEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -565,7 +643,7 @@ public class interfaz extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(equipos_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(coger_equipos))
+                                .addComponent(coger_equipos, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(nombre_LIGA, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -583,16 +661,32 @@ public class interfaz extends javax.swing.JFrame {
                                         .addComponent(coger_partidos)
                                         .addGap(1, 1, 1)))))
                         .addGap(17, 17, 17))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ligas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pelota, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ligas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pelota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(datos_tabla_insertar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(equipos_texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(partidos_texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pais_texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombre_LIGA1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 38, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(modificar_liga)
+                            .addComponent(modifica_partidos)
+                            .addComponent(modifica_equipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modifica_pais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modifica_nombreLiga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12))))
         );
 
         pack();
@@ -601,37 +695,37 @@ public class interfaz extends javax.swing.JFrame {
     private void jugadores_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugadores_consultarActionPerformed
         try {
             gc.conn1.setAutoCommit(false);
-            
+
             String query = "SELECT * FROM jugadores ";
-            
+
             Statement sta = gc.conn1.createStatement();
-            
+
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-            
+
             int numColumnas = metaDatos.getColumnCount();
-            
+
             tabla_mostrar = new DefaultTableModel();
-            
+
             this.datos.setModel(tabla_mostrar);
-            
+
             for (int i = 1; i <= numColumnas; i++) {
                 tabla_mostrar.addColumn(metaDatos.getColumnLabel(i));
             }
-            
+
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-                
+
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
                 tabla_mostrar.addRow(fila);
             }
-            
+
             rs.close();
-            
+
             sta.close();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             errores = e.toString();
@@ -642,37 +736,37 @@ public class interfaz extends javax.swing.JFrame {
     private void equipos_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipos_consultarActionPerformed
         try {
             gc.conn1.setAutoCommit(false);
-            
+
             String query = "SELECT * FROM equipo ";
-            
+
             Statement sta = gc.conn1.createStatement();
-            
+
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-            
+
             int numColumnas = metaDatos.getColumnCount();
-            
+
             tabla_mostrar = new DefaultTableModel();
-            
+
             this.datos.setModel(tabla_mostrar);
-            
+
             for (int i = 1; i <= numColumnas; i++) {
                 tabla_mostrar.addColumn(metaDatos.getColumnLabel(i));
             }
-            
+
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-                
+
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
                 tabla_mostrar.addRow(fila);
             }
-            
+
             rs.close();
-            
+
             sta.close();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             errores = e.toString();
@@ -683,37 +777,37 @@ public class interfaz extends javax.swing.JFrame {
     private void ligas_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ligas_consultarActionPerformed
         try {
             gc.conn1.setAutoCommit(false);
-            
+
             String query = "SELECT * FROM liga ";
-            
+
             Statement sta = gc.conn1.createStatement();
-            
+
             ResultSet rs = sta.executeQuery(query);
             ResultSetMetaData metaDatos = rs.getMetaData();
-            
+
             int numColumnas = metaDatos.getColumnCount();
-            
+
             tabla_mostrar = new DefaultTableModel();
-            
+
             this.datos.setModel(tabla_mostrar);
-            
+
             for (int i = 1; i <= numColumnas; i++) {
                 tabla_mostrar.addColumn(metaDatos.getColumnLabel(i));
             }
-            
+
             while (rs.next()) {
                 Object[] fila = new Object[numColumnas];
-                
+
                 for (int i = 0; i < numColumnas; i++) {
                     fila[i] = rs.getObject(i + 1);
                 }
                 tabla_mostrar.addRow(fila);
             }
-            
+
             rs.close();
-            
+
             sta.close();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             errores = e.toString();
@@ -734,8 +828,8 @@ public class interfaz extends javax.swing.JFrame {
 
     private void insertar_equipoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_equipoBotonActionPerformed
         gc.insertarEquipo(coger_nombreEquipo.getText(), coger_nombreCiudad.getText(),
-                coger_nombreEstadio.getText(),coger_nombrePresidente.getText(),coger_anno.getText(),
-                coger_aFavor.getText(),coger_enContra.getText(), (String) cogerLiga.getSelectedItem());
+                coger_nombreEstadio.getText(), coger_nombrePresidente.getText(), coger_anno.getText(),
+                coger_aFavor.getText(), coger_enContra.getText(), (String) cogerLiga.getSelectedItem());
         equipos_consultarActionPerformed(evt);
         error.setText(gc.cadena_resultado);
         JOptionPane.showMessageDialog(null, "Equipo insertado correctamente");
@@ -783,10 +877,10 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_coger_nacionalidadMouseClicked
 
     private void insertar_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_jugadorActionPerformed
-       gc.insertarJugador(coger_nombreJugador.getText(), coger_posicion.getText(), coger_nacionalidad.getText(), (String) cogerEquipo.getSelectedItem());
-       jugadores_consultarActionPerformed(evt);
-       error.setText(gc.cadena_resultado);
-       JOptionPane.showMessageDialog(null, "Jugador insertado correctamente");
+        gc.insertarJugador(coger_nombreJugador.getText(), coger_posicion.getText(), coger_nacionalidad.getText(), (String) cogerEquipo.getSelectedItem());
+        jugadores_consultarActionPerformed(evt);
+        error.setText(gc.cadena_resultado);
+        JOptionPane.showMessageDialog(null, "Jugador insertado correctamente");
     }//GEN-LAST:event_insertar_jugadorActionPerformed
 
     private void coger_nombreLigaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coger_nombreLigaMouseClicked
@@ -806,40 +900,57 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_coger_partidosMouseClicked
 
     private void insertar_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertar_ligaActionPerformed
-       gc.insertarliga(coger_nombreLiga.getText(), coger_pais.getText(), coger_equipos.getText(), coger_partidos.getText());
-       ligas_consultarActionPerformed(evt);
-       error.setText(gc.cadena_resultado);
-       JOptionPane.showMessageDialog(null, "Liga insertada correctamente");
-       llenarLiga();
+        gc.insertarliga(coger_nombreLiga.getText(), coger_pais.getText(), coger_equipos.getText(), coger_partidos.getText());
+        ligas_consultarActionPerformed(evt);
+        error.setText(gc.cadena_resultado);
+        JOptionPane.showMessageDialog(null, "Liga insertada correctamente");
+        llenarLiga();
     }//GEN-LAST:event_insertar_ligaActionPerformed
-    
+
+    private void datos_tabla_insertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datos_tabla_insertarActionPerformed
+
+        modifica_nombreLiga.setText(datos.getValueAt(datos.getSelectedRow(), 0).toString());
+        modifica_pais.setText(datos.getValueAt(datos.getSelectedRow(), 1).toString());
+        modifica_equipos.setText(datos.getValueAt(datos.getSelectedRow(), 2).toString());
+        modifica_partidos.setText(datos.getValueAt(datos.getSelectedRow(), 3).toString());
+        
+    }//GEN-LAST:event_datos_tabla_insertarActionPerformed
+
+    private void modificar_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_ligaActionPerformed
+        gc.modificarLiga(modifica_nombreLiga.getText(), modifica_pais.getText(), modifica_equipos.getText(), modifica_partidos.getText());
+        ligas_consultarActionPerformed(evt);
+        error.setText(gc.cadena_resultado);
+        JOptionPane.showMessageDialog(null, "Liga modificada correctamente");
+        llenarLiga();
+    }//GEN-LAST:event_modificar_ligaActionPerformed
+
     GestorConexion gc = new GestorConexion();
-    
+
     public void llenarLiga() {
         try {
-            
+
             Statement sta = gc.conn1.createStatement();
             ResultSet rs = sta.executeQuery("SELECT nombre FROM liga ORDER BY nombre ASC ");
             cogerLiga.removeAllItems();
             while (rs.next()) {
                 cogerLiga.addItem(rs.getString(1));
             }
-            
+
         } catch (Exception e) {
             System.out.println("Error");
         }
     }
-    
+
     public void llenarEquipo() {
         try {
-            
+
             Statement sta = gc.conn1.createStatement();
             ResultSet rs = sta.executeQuery("SELECT nombre FROM equipo ORDER BY nombre  ASC ");
             cogerEquipo.removeAllItems();
             while (rs.next()) {
                 cogerEquipo.addItem(rs.getString(1));
             }
-            
+
         } catch (Exception e) {
             System.out.println("Error");
         }
@@ -900,9 +1011,11 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField coger_partidos;
     private javax.swing.JTextField coger_posicion;
     private javax.swing.JTable datos;
+    private javax.swing.JButton datos_tabla_insertar;
     private javax.swing.JLabel en_contra;
     private javax.swing.JButton equipos_consultar;
     private javax.swing.JLabel equipos_texto;
+    private javax.swing.JLabel equipos_texto1;
     private javax.swing.JLabel error;
     private javax.swing.JLabel fundado;
     private javax.swing.JLabel id_texto;
@@ -914,6 +1027,11 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jugadores_eliminar;
     private javax.swing.JLabel ligas;
     private javax.swing.JButton ligas_consultar;
+    private javax.swing.JTextField modifica_equipos;
+    private javax.swing.JTextField modifica_nombreLiga;
+    private javax.swing.JTextField modifica_pais;
+    private javax.swing.JTextField modifica_partidos;
+    private javax.swing.JButton modificar_liga;
     private javax.swing.JLabel nombreCiudad;
     private javax.swing.JLabel nombreEquipo;
     private javax.swing.JLabel nombreEstadio;
@@ -923,9 +1041,12 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel nombrePresidente;
     private javax.swing.JLabel nombreTeam;
     private javax.swing.JLabel nombre_LIGA;
+    private javax.swing.JLabel nombre_LIGA1;
     private javax.swing.JLabel nombrenacionalidad;
     private javax.swing.JLabel pais_texto;
+    private javax.swing.JLabel pais_texto1;
     private javax.swing.JLabel partidos_texto;
+    private javax.swing.JLabel partidos_texto1;
     private javax.swing.JLabel pelota;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables

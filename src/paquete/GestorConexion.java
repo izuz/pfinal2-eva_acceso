@@ -193,4 +193,20 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
+    
+    public void modificarLiga(String nombre, String pais, String numero_equipos, String numero_partidos){
+        try {
+            conn1.setAutoCommit(false);
+
+            Statement sta = conn1.createStatement();
+
+            sta.executeUpdate("UPDATE  liga SET nombre=('" + nombre +"'), pais=('"+ pais +"'), numero_equipos=('"+ numero_equipos +"'), numero_partidos=('"+ numero_partidos +"') ");
+
+            System.out.println("Liga modificada correctamente");
+
+            sta.close();
+        } catch (Exception e) {
+        }
+    }
+    
 }
