@@ -14,7 +14,6 @@ public class GestorConexion {
 
     Connection conn1;
     String cadena_resultado = "";
-    
 
     public GestorConexion() {
 
@@ -103,9 +102,9 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
-    
-    public void insertarEquipo(String nombre, String ciudad, String estadio, String presidente, String anno, String aFavor, String enContra, String liga){
-        
+
+    public void insertarEquipo(String nombre, String ciudad, String estadio, String presidente, String anno, String aFavor, String enContra, String liga) {
+
         try {
             conn1.setAutoCommit(false);
 
@@ -134,8 +133,8 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
-    
-    public void insertarJugador(String nombre, String posicion, String nacionalidad, String nombreEquipo){
+
+    public void insertarJugador(String nombre, String posicion, String nacionalidad, String nombreEquipo) {
         try {
             conn1.setAutoCommit(false);
 
@@ -165,7 +164,7 @@ public class GestorConexion {
         }
     }
 
-    public void insertarliga(String nombre, String pais, String numero_equipos, String numero_partidos){
+    public void insertarliga(String nombre, String pais, String numero_equipos, String numero_partidos) {
         try {
             conn1.setAutoCommit(false);
 
@@ -193,20 +192,32 @@ public class GestorConexion {
             cadena_resultado = e.toString();
         }
     }
-    
-    public void modificarLiga(String nombre, String pais, String numero_equipos, String numero_partidos){
+
+    public void modificarLiga(String nombre, String pais, String numero_equipos, String numero_partidos) {
         try {
             conn1.setAutoCommit(false);
 
             Statement sta = conn1.createStatement();
 
-            sta.executeUpdate("UPDATE  liga SET nombre=('" + nombre +"'), pais=('"+ pais +"'), numero_equipos=('"+ numero_equipos +"'), numero_partidos=('"+ numero_partidos +"') ");
+            sta.executeUpdate("UPDATE  liga SET nombre=('" + nombre + "'), pais=('" + pais + "'), numero_equipos=('" + numero_equipos + "'), numero_partidos=('" + numero_partidos + "') ");
 
             System.out.println("Liga modificada correctamente");
 
             sta.close();
         } catch (Exception e) {
+            System.out.println("Error");
+
+            try {
+                if (conn1 != null) {
+                    conn1.rollback();
+                }
+            } catch (Exception se2) {
+                se2.printStackTrace();
+                cadena_resultado = se2.toString();
+            }
+            e.printStackTrace();
+            cadena_resultado = e.toString();
         }
     }
-    
+
 }
