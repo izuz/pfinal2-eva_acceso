@@ -198,8 +198,10 @@ public class GestorConexion {
             conn1.setAutoCommit(false);
 
             Statement sta = conn1.createStatement();
-
-            sta.executeUpdate("UPDATE  liga SET nombre=('" + nombre + "'), pais=('" + pais + "'), numero_equipos=('" + numero_equipos + "'), numero_partidos=('" + numero_partidos + "') ");
+            String query = "UPDATE  liga SET  pais='" + pais + "', numero_equipos=" + numero_equipos + ", numero_partidos=" + numero_partidos + " WHERE nombre='" + nombre+ "';";
+            System.out.println(query);
+            sta.executeUpdate(query);
+            
 
             System.out.println("Liga modificada correctamente");
 

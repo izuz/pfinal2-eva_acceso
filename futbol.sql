@@ -27,6 +27,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `equipo`
 --
+CREATE DATABASE futbol;
+USE futbol;
 
 CREATE TABLE `equipo` (
   `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
@@ -142,13 +144,13 @@ ALTER TABLE `jugadores`
 -- Filtros para la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`nombre_liga`) REFERENCES `liga` (`nombre`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`nombre_liga`) REFERENCES `liga` (`nombre`) ON UPDATE CASCADE ON DELETE NO ACTION;
 
 --
 -- Filtros para la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  ADD CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`nombre_equipo`) REFERENCES `equipo` (`nombre`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`nombre_equipo`) REFERENCES `equipo` (`nombre`) ON UPDATE CASCADE ON DELETE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
